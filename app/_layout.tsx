@@ -1,5 +1,17 @@
 import { Stack } from "expo-router";
+import { useState } from "react";
 
 export default function RootLayout() {
-  return <Stack />;
+  const [isCoach, setIsCoach] = useState(false); // Ændre denne til true/false for test
+
+  return (
+    <Stack screenOptions={{headerShown: false}}>
+      {isCoach ? (
+        <Stack.Screen name="(coachtabs)" options={{ headerShown: false }} />
+      ) : (
+        <Stack.Screen name="(playertabs)" options={{ headerShown: false }} />
+      )}
+      <Stack.Screen name="+not-found"></Stack.Screen>
+    </Stack>
+  );
 }
