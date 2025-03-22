@@ -6,8 +6,9 @@ export default function RootLayout() {
 
   return (
     <Stack screenOptions={{headerShown: false}}>
+      <Stack.Screen name="login" options={{headerShown: false}} />
       {isCoach ? (
-        <Stack.Screen name="(coachtabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="(playertabs)" options={{ headerShown: false }} />
       ) : (
         <Stack.Screen name="(playertabs)" options={{ headerShown: false }} />
       )}
